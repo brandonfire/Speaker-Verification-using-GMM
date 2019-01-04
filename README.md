@@ -9,7 +9,7 @@ Code Valid for Linux Machines only. For Windows users, change of path and slashe
 3) Training GMM model
 4) Dumping GMM model onto Local Storage(.gmm)
 
-       test_models.py:
+       test.py:
 1) Read GMM Files
 2) Test 
 3) Compute winner speaker
