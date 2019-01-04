@@ -13,5 +13,11 @@ Code Valid for Linux Machines only. For Windows users, change of path and slashe
 1) Read GMM Files
 2) Test 
 3) Compute winner speaker
+
+       test_delta.py
+1) Used for calculating the delta co-eff from MFCC using python_speech_features package.
+
+	speakerfeatures.py
+1) Used for computing combined mfcc and delta (40 dimensional vector)	
 			
 	
