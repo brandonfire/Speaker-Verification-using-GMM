@@ -1,6 +1,6 @@
 # Speaker-Identification-using-GMM
-Speaker Verification using GMM_UBM and i-vectors using VoxForge dataset
-Code Valid for Linux Machines only. For Windows users, change of path and slashes are required in several places.
+Speaker Verification using GMM_UBM and i-vectors using VoxForge dataset.
+
 
 	File Descriptions:
 	train_models.py:  
@@ -14,10 +14,5 @@ Code Valid for Linux Machines only. For Windows users, change of path and slashe
 2) Test 
 3) Compute winner speaker
 
-       test_delta.py
-1) Used for calculating the delta co-eff from MFCC using python_speech_features package.
-
-	speakerfeatures.py
-1) Used for computing combined mfcc and delta (40 dimensional vector)	
-			
+      	delta_40_extraction.py
 	
