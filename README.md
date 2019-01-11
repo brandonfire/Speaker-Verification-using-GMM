@@ -1,18 +1,26 @@
 # Speaker-Identification-using-GMM
-Speaker Verification using GMM_UBM and i-vectors using VoxForge dataset.
-
+## Speaker Identification using a Gaussian Mixture model on VoxForge dataset.
 
 	File Descriptions:
-	train_models.py:  
-1) Reading audio data of 34 speakers (5 utterances per speaker) in Python	
-2) Extracting MFCC Features 
-3) Training GMM model
-4) Dumping GMM model onto Local Storage(.gmm)
+*train_models.py*:  
+* Reading audio data of a speaker (5 utterances of speaker: belmontguy) 	
+* Extracting MFCC features 
+* Training GMM model
+* Dumping GMM model onto Local Storage(.gmm)
 
-       test.py:
-1) Read GMM Files
-2) Test 
-3) Compute winner speaker
+*train_GMM_x.py*(x=2:5):  
+* Reading audio data of a speaker (5 utterances of speaker) 	
+* Extracting MFCC features 
+* Training GMM model
+* Dumping GMM model onto Local Storage(.gmm)
 
-      	delta_40_extraction.py
-	
+*test.py*:
+* Read audio files of 5 test speakers using Scipy
+* Read the GMM model(.gmm) from local storage  
+* Test against all speakers 
+* Computer Winner speaker based on log_likelihood
+
+*delta_40_extraction.py*:
+* Read an audio(.wav) file 
+* Extract MFCC and Deltas
+* Combine the two to form a 40dimensional feature vector for Audio Analysis
