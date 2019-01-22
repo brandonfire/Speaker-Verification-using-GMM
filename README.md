@@ -1,5 +1,5 @@
 # Speaker-Verification-System
-## Speaker Identification using a Gaussian Mixture model on VoxForge and SITW database.
+## Speaker Verification using Gaussian Mixture model on VoxForge and SITW database.
 
 	File Descriptions:
 *train_models.py*:  
