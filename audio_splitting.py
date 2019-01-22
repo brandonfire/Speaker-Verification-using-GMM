@@ -1,14 +1,16 @@
+""" author = ____shikharparikh_____ """ 
+
 import librosa as lbs
 import numpy as np
 import os
 import soundfile as sd
 import h5py
 
-flac_file_path = r"D:\ashish_gopal\sitw_database_related\database\sitw_database.v4\dev\audio"
+flac_file_path = r"D:\sitw_database_related\database\sitw_database.v4\dev\audio"
 model_path = r"C:\Users\student\PycharmProjects\sitw_related\trained_models"
 
-train_data_path = r"D:\ashish_gopal\sitw_database_related\database\train_sitw"
-test_data_path = r"D:\ashish_gopal\sitw_database_related\database\test_sitw"
+train_data_path = r"D:\sitw_database_related\database\train_sitw"
+test_data_path = r"D:\sitw_database_related\database\test_sitw"
 
 def_rate = 16000
 
