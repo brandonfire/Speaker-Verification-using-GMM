@@ -1,5 +1,7 @@
 # Speaker-Verification-System
 ## Speaker Verification using Gaussian Mixture model on VoxForge and SITW database.
+Update Speaker-Verification-System: Chengbin Voice spoofing project.
+
 
 	File Descriptions:
 *train_models.py*:  
