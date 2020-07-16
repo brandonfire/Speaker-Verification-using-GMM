@@ -10,11 +10,11 @@ import time
 
 #path to training data
 #source   = "/home/deeplearning/Downloads/development_set "
-source = r"/home/deeplearning/Downloads/TEST_GMM"
+source = r"./testdata"
 
-modelpath = "/home/deeplearning/Downloads/"
+modelpath = "./trainedmodel"
 
-test_file = "/home/deeplearning/Downloads/development_set_test.txt"
+test_file = "./datatest.txt"
 
 #file_paths = open(test_file,'r')
 test_files = [os.path.join(source,fname) for fname in os.listdir(source) if fname.endswith('.wav')]
@@ -25,7 +25,7 @@ gmm_files = [os.path.join(modelpath,fname) for fname in os.listdir(modelpath) if
 models    = [cPickle.load(open(fname,'rb')) for fname in gmm_files]
 speakers   = [fname.split("/")[-1].split(".gmm")[0] for fname
               in gmm_files]
-
+print(models)
 # Read the test directory and get the list of test audio files
 for f in test_files:
     #path = path.strip()
@@ -39,5 +39,5 @@ for f in test_files:
         scores = np.array(gmm.score(vector))
         log_likelihood[i] = scores.sum()
     winner = np.argmax(log_likelihood)
-    print("\tdetected as - ", speakers[winner])
+    print(f,"\tdetected as - ", speakers[winner])
 time.sleep(1.0)

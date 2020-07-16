@@ -11,12 +11,12 @@ warnings.filterwarnings("ignore")
 
 #path to training data
 # source   = "/home/deeplearning/Downloads/development_set /"
-source = r"/home/deeplearning/Downloads/development_set /belmontguy-20110426-geu/wav"
+source = r"./Sounddata"
 
 #path where training speakers will be saved
-dest = "/home/deeplearning/Downloads/speaker_models"
+dest = "./trainedmodel"
 
-train_file = "/home/deeplearning/Downloads/development_set_enroll.txt"
+train_file = "./datacollected.txt"
 
 file_paths = open(train_file,'r')
 
@@ -27,10 +27,11 @@ features = np.asarray(())
 features.shape
 
 files = [os.path.join(source,fname) for fname in os.listdir(source) if fname.endswith('.wav')]
-#print(files)
+print(files)
 count = 0
 for f in sorted(files):
-    if count<=5:
+    print(f)
+    if count<5:
         count = count + 1
         sr,audio = read(f)
             # extract 20 dimensional MFCC features
@@ -41,13 +42,15 @@ for f in sorted(files):
             features = vector
         else:
             features = np.vstack((features, vector))
+        print(features)
 #print(features.shape)
 
 gmm = GaussianMixture(n_components = 16,covariance_type='diag',n_init = 3)
 gmm.fit(features)
 
-# dumping the trained gaussian model
-picklefile = path.split("-")[0]+".gmm"
+        # dumping the trained gaussian model
+picklefile = f[11:].split("-")[0]+".gmm"
+print(picklefile)
 cPickle.dump(gmm,open(dest + picklefile,'wb'))
 print('+ modeling completed for speaker:',picklefile," with data point = ",features.shape)
 features = np.asarray(())
